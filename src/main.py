@@ -43,7 +43,8 @@ def find_index_jogo(jogos, id):
 
 def pesquisar_jogo(jogos, to_search):
     for jogo in jogos:
-        if jogo['id'] == int(to_search) or jogo['nome'].lower() == str(to_search).lower():
+        id_search = int(to_search) if str(to_search).isnumeric() else ''
+        if jogo['id'] == id_search or jogo['nome'].lower() == str(to_search).lower():
             return jogo
     return None
 
